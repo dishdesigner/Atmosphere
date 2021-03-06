@@ -1,5 +1,8 @@
 @media screen and (min-width:480px){}
 
+body{
+    background-color: rgb(103, 125, 141);
+}
 .bg {
     background-image: url(https://ugc.futurelearn.com/uploads/assets/99/2c/992c0223-1f19-400d-96a8-e75a66606762.jpg);
     height:100%;
@@ -11,33 +14,33 @@
     margin-bottom: 0px;
 }
 .smileBtn{
-    margin:20px;
+    
     background-color: transparent;
     border:none;
     
 }
 .angryBtn{
-    margin:20px;
+    
     background-color:transparent;
     border:none; 
 }
 .loveBtn{
-    margin:20px;
+  
     background-color:transparent;
     border:none;
 } 
 .sadBtn{
-    margin:20px;
+    
     background-color: transparent;
     border:none;
 }
 .crazyBtn{
-    margin:20px;
+   
     background-color:transparent;
     border:none;
 }
 .chillBtn{
-    margin:20px;
+    
     background-color: transparent;
     border:none;
 }
