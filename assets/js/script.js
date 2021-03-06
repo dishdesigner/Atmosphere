@@ -9,6 +9,7 @@ var weather = {
     },
 };
 var moods = {
+    userinput: {key1: value1, key2: value2},
     happy: {
         genres: ["pop"],
     },
@@ -17,8 +18,23 @@ var moods = {
         keywords: []
     }
 }
-var userInput = "happy"
-var keywords = moods[userInput].keywords
+var userInput = "happy";
+var keywords = moods[userInput].keywords;
+
+function getWeather() {
+    fetch('https://api.openweathermap.org/data/2.5/weather?id=4509177&APPID=c766e07983131bea43b14f794d29153e&units=imperial', {
+  // The browser fetches the resource from the remote server without first looking in the cache.
+  // The browser will then update the cache with the downloaded resource.
+  cache: 'reload',
+})
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+  });
+}
+
 function getMusic(mood) {
     const settings = {
         async: true,
