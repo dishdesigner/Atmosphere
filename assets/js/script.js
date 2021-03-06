@@ -22,17 +22,19 @@ var userInput = "happy";
 var keywords = moods[userInput].keywords;
 
 function getWeather() {
-    fetch('https://api.openweathermap.org/data/2.5/weather?id=4509177&APPID=&units=imperial', {
-  // The browser fetches the resource from the remote server without first looking in the cache.
-  // The browser will then update the cache with the downloaded resource.
-  cache: 'reload',
+    fetch("https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=%22metric%22%20or%20%22imperial%22&mode=xml%2C%20html", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "7463f1062fmsh1fe8735365773c9p140f00jsne6b9b6acaa80", // this shields private API keys
+		"x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
+	}
 })
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
+.then(response => {
+	console.log(response); // change this output location
+})
+.catch(err => {
+	console.error(err); // change this error handling output
+});
 }
 
 function getMusic(mood) {
