@@ -22,7 +22,7 @@ var userInput = "happy";
 var keywords = moods[userInput].keywords;
 
 function getWeather() {
-    fetch('https://api.openweathermap.org/data/2.5/weather?id=4509177&APPID=c766e07983131bea43b14f794d29153e&units=imperial', {
+    fetch('https://api.openweathermap.org/data/2.5/weather?id=4509177&APPID=&units=imperial', {
   // The browser fetches the resource from the remote server without first looking in the cache.
   // The browser will then update the cache with the downloaded resource.
   cache: 'reload',
