@@ -47,3 +47,32 @@ body{
 li{
 list-style-type: none;
 }
+.mood{
+    border-radius: 25px;
+    background-color: white;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom:16px;
+    padding: 4px;
+
+
+}
+.content{
+    background-color:  rgb(103, 125, 141);
+}
+#weatherCard{
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 16px;
+    background-color: white;
+    border-radius: 35px;
+
+}
+#musicCard{
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 16px;
+    background-color: white;
+    border-radius: 35px;
+
+}
