@@ -25,7 +25,7 @@ function getWeather() {
     fetch("https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=%22metric%22%20or%20%22imperial%22&mode=xml%2C%20html", {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-key": "7463f1062fmsh1fe8735365773c9p140f00jsne6b9b6acaa80", // this shields private API keys
+		"x-rapidapi-key": "7463f1062fmsh1fe8735365773c9p140f00jsne6b9b6acaa80", // this doesn't shield private API keys! Don't care...
 		"x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
 	}
 })

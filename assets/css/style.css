@@ -1,8 +1,18 @@
-@media screen and (min-width:480px){}
+/* @media screen and (min-width:480px){} */
 
 body{
     background-color: rgb(103, 125, 141);
+    font-size: 1em;
 }
+
+li {
+    list-style-type: none;
+}
+
+select {
+    margin: 0 0 1em 0;
+}
+
 .bg {
     background-image: url(https://ugc.futurelearn.com/uploads/assets/99/2c/992c0223-1f19-400d-96a8-e75a66606762.jpg);
     height:100%;
@@ -14,37 +24,51 @@ body{
     margin-bottom: 0px;
 }
 .smileBtn{
-    
+
     background-color: transparent;
     border:none;
-    
+
 }
 .angryBtn{
-    
-    background-color:transparent;
-    border:none; 
-}
-.loveBtn{
-  
+
     background-color:transparent;
     border:none;
-} 
+}
+.loveBtn{
+
+    background-color:transparent;
+    border:none;
+}
 .sadBtn{
-    
+
     background-color: transparent;
     border:none;
 }
 .crazyBtn{
-   
+
     background-color:transparent;
     border:none;
 }
 .chillBtn{
-    
+
     background-color: transparent;
     border:none;
 }
-li{
-list-style-type: none;
+
+.dropdown {
+
 }
-© 2021 GitHub, Inc.
+
+.small-icon {
+    width: 6rem;
+}
+
+#icon-currentweather {
+}
+
+#current-temp {
+    text-size: 3em;
+    font-weight: 800;
+}
+
+
