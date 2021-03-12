@@ -48,7 +48,7 @@ function getMusic(mood) {
             '&locale=en-US&offset=0&limit=10',
         method: 'GET',
         headers: {
-            'x-rapidapi-key': '',
+            'x-rapidapi-key': 'f942341111mshdf06ad5a580995fp1bacd2jsna1305fa9f28f',
             'x-rapidapi-host': 'shazam.p.rapidapi.com',
         },
     };
