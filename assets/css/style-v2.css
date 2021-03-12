@@ -1,6 +1,6 @@
 /* @media screen and (min-width:480px){} */
 
-body{
+body {
     background-color: rgb(103, 125, 141);
     font-size: 1em;
 }
@@ -15,60 +15,88 @@ select {
 
 .bg {
     background-image: url(https://ugc.futurelearn.com/uploads/assets/99/2c/992c0223-1f19-400d-96a8-e75a66606762.jpg);
-    height:100%;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     text-align: center;
-    color:white;
+    color: white;
     margin-bottom: 0px;
 }
-.smileBtn{
 
+.smileBtn {
     background-color: transparent;
-    border:none;
-
+    border: none;
 }
-.angryBtn{
 
-    background-color:transparent;
-    border:none;
-}
-.loveBtn{
-
-    background-color:transparent;
-    border:none;
-}
-.sadBtn{
-
+.angryBtn {
     background-color: transparent;
-    border:none;
+    border: none;
 }
-.crazyBtn{
 
-    background-color:transparent;
-    border:none;
-}
-.chillBtn{
-
+.loveBtn {
     background-color: transparent;
-    border:none;
+    border: none;
 }
 
-.dropdown {
-
+.sadBtn {
+    background-color: transparent;
+    border: none;
 }
+
+.crazyBtn {
+    background-color: transparent;
+    border: none;
+}
+
+.chillBtn {
+    background-color: transparent;
+    border: none;
+}
+
+.dropdown {}
 
 .small-icon {
     width: 6rem;
 }
 
-#icon-currentweather {
-}
+#icon-currentweather {}
 
 #current-temp {
-    text-size: 3em;
+    font-size: 3em;
     font-weight: 800;
 }
 
+#thumbs {}
 
+.player {
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.playpausetrack, .prevtrack, .nexttrack {
+    padding: 15px;
+}
+
+.sliderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
