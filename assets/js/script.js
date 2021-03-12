@@ -19,12 +19,12 @@ var moods = {
     }
 }
 
-var happy = $('.smileBtn')
-var angry = $('.angryBtn')
-var love = $('.loveBtn')
-var sad = $('.sadBtn')
-var crazy = $('.crazyBtn)
-var chill = $('.chillBtn')
+var happy = $('.smileBtn');
+var angry = $('.angryBtn');
+var love = $('.loveBtn');
+var sad = $('.sadBtn');
+var crazy = $('.crazyBtn');
+var chill = $('.chillBtn');
 
 var userInput = "happy";
 var keywords = moods[userInput].keywords;
