@@ -1,70 +1,78 @@
 var weather = {
-    rainy: {
-        genres: ['classical'],
-        keywords: ['sad'],
-    },
-    sunny: {
-        genres: ["rock"],
-        keywords: ["happy"],
-    },
+  rainy: {
+    genres: ["classical"],
+    keywords: ["sad"],
+  },
+  sunny: {
+    genres: ["rock"],
+    keywords: ["happy"],
+  },
 };
-var moods = {
-    userinput: { key1: value1, key2: value2 },
-    happy: {
-        genres: ["pop"],
-    },
-    sad: {
-        genres: [],
-        keywords: []
-    }
-}
+var currentMood = '';
+var moods = ["happy", "angry", "love", "sad", "crazy", "chill"];
+$(".smileBtn").on("click", function (e) {
+    currentMood = moods[0];
+    
+});
+$(".angryBtn").on("click", function (e) {
+    currentMood = moods[1];
+});
+$(".loveBtn").on("click", function (e) {
+    currentMood = moods[2];
+});
+$(".sadBtn").on("click", function (e) {
+    currentMood = moods[3];
+});
+$(".crazyBtn").on("click", function (e) {
+    currentMood = moods[4];
+});
+$(".chillBtn").on("click", function (e) {
+    currentMood = moods[5];
+});
 
-var happy = $('.smileBtn');
-var angry = $('.angryBtn');
-var love = $('.loveBtn');
-var sad = $('.sadBtn');
-var crazy = $('.crazyBtn');
-var chill = $('.chillBtn');
+console.log(mood);
+var userInput = mood[""];
 
-var userInput = "happy";
-var keywords = moods[userInput].keywords;
 
 function getWeather() {
-    fetch("https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=%22metric%22%20or%20%22imperial%22&mode=xml%2C%20html", {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-key": "7463f1062fmsh1fe8735365773c9p140f00jsne6b9b6acaa80", // this doesn't shield private API keys! Don't care...
-            "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com"
-        }
+  fetch(
+    "https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=%22metric%22%20or%20%22imperial%22&mode=xml%2C%20html",
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-key": "7463f1062fmsh1fe8735365773c9p140f00jsne6b9b6acaa80", // this doesn't shield private API keys! Don't care...
+        "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+      },
+    }
+  )
+    .then((response) => {
+      console.log(response); // change this output location
     })
-        .then(response => {
-            console.log(response); // change this output location
-        })
-        .catch(err => {
-            console.error(err); // change this error handling output
-        });
-}
-
-function getMusic(mood) {
-    const settings = {
-        async: true,
-        crossDomain: true,
-        url:
-            'https://shazam.p.rapidapi.com/search?term=' +
-            mood +
-            '&locale=en-US&offset=0&limit=10',
-        method: 'GET',
-        headers: {
-            'x-rapidapi-key': '',
-            'x-rapidapi-host': 'shazam.p.rapidapi.com',
-        },
-    };
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-        // update the DOM html
+    .catch((err) => {
+      console.error(err); // change this error handling output
     });
 }
-getMusic(userInput)
+
+function getMusic(currentMood) {
+  const settings = {
+    async: true,
+    crossDomain: true,
+    url:
+      "https://shazam.p.rapidapi.com/search?term=" +
+      moods +
+      "&locale=en-US&offset=0&limit=10",
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "f942341111mshdf06ad5a580995fp1bacd2jsna1305fa9f28f",
+      "x-rapidapi-host": "shazam.p.rapidapi.com",
+    },
+  };
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    // update the DOM html
+  });
+}
+getMusic(userInput);
 // name variables for music player
 // var nowPlaying = $('.nowPlaying');
 // var trackArt = $('.trackArt');
@@ -84,9 +92,6 @@ getMusic(userInput)
 //     path
 
 // ];
-
-
-
 
 // // clears the duration from previous track on new track load
 // function loadTrack(trackIndex) {
@@ -123,25 +128,25 @@ getMusic(userInput)
 
 //     },
 //         $('.nexttrack').click(function nextTrack() {
-//             // Go back to the first track if the 
-//             // current one is the last in the track list 
+//             // Go back to the first track if the
+//             // current one is the last in the track list
 //             if (trackIndex < trackList.length - 1)
 //                 trackIndex = +1;
 //             else trackIndex = 0;
 
-//             // Load and play the new track 
+//             // Load and play the new track
 //             loadTrack(trackIndex);
 //             playTrack();
 //         },
 
 //             $('.prevtrack').click(function prevTrack() {
-//                 // Go back to the last track if the 
-//                 // current one is the first in the track list 
+//                 // Go back to the last track if the
+//                 // current one is the first in the track list
 //                 if (trackIndex > 0)
 //                     trackIndex = -1;
 //                 else trackIndex = trackList.length;
 
-//                 // Load and play the new track 
+//                 // Load and play the new track
 //                 loadTrack(trackIndex);
 //                 playTrack();
 //             }))));
