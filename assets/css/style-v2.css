@@ -54,49 +54,24 @@ select {
     border: none;
 }
 
-.dropdown {}
+
 
 .small-icon {
     width: 6rem;
 }
 
-#icon-currentweather {}
+
 
 #current-temp {
-    font-size: 3em;
+    font-size: 1em;
     font-weight: 800;
 }
-
-#thumbs {}
-
-.player {
-    height: 35vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+#thumbs {
+    background-color: rgb(103, 125, 141);
 }
+#Thumbs {
+    background-color: rgb(103, 125, 141);
+} 
 
-.details {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 10px;
-}
 
-.buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
 
-.playpausetrack, .prevtrack, .nexttrack {
-    padding: 15px;
-}
-
-.sliderContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
