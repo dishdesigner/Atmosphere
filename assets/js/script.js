@@ -9,7 +9,7 @@ var weather = {
     },
 };
 var moods = {
-    userinput: { key1: value1, key2: value2 },
+    userinput: { mood: value1, city: value2 },
     happy: {
         genres: ["pop"],
     },
