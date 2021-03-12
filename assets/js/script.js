@@ -8,23 +8,16 @@ var weather = {
         keywords: ["happy"],
     },
 };
-var moods = {
-    userinput: { key1: value1, key2: value2 },
-    happy: {
-        genres: ["pop"],
-    },
-    sad: {
-        genres: [],
-        keywords: []
-    }
+var mood = {
+    happy = $('.smileBtn'),
+    angry = $('.angryBtn'),
+    love = $('.loveBtn'),
+    sad = $('.sadBtn'),
+    crazy = $('.crazyBtn'),
+    chill = $('.chillBtn'),
 }
 
-var happy = $('.smileBtn');
-var angry = $('.angryBtn');
-var love = $('.loveBtn');
-var sad = $('.sadBtn');
-var crazy = $('.crazyBtn');
-var chill = $('.chillBtn');
+
 
 var userInput = "happy";
 var keywords = moods[userInput].keywords;
