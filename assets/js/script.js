@@ -11,27 +11,28 @@ var weather = {
 var currentMood = '';
 var moods = ["happy", "angry", "love", "sad", "crazy", "chill"];
 $(".smileBtn").on("click", function (e) {
-    currentMood = moods[0];
-    
+  currentMood = moods[0];
+
 });
 $(".angryBtn").on("click", function (e) {
-    currentMood = moods[1];
+  currentMood = moods[1];
 });
 $(".loveBtn").on("click", function (e) {
-    currentMood = moods[2];
+  currentMood = moods[2];
 });
 $(".sadBtn").on("click", function (e) {
-    currentMood = moods[3];
+  currentMood = moods[3];
 });
 $(".crazyBtn").on("click", function (e) {
-    currentMood = moods[4];
+  currentMood = moods[4];
 });
 $(".chillBtn").on("click", function (e) {
-    currentMood = moods[5];
+  currentMood = moods[5];
 });
 
 console.log(mood);
 var userInput = mood[""];
+var music = '';
 
 
 function getWeather() {
