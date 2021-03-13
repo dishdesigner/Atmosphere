@@ -1,84 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      />
-    <link rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet" />
-     
-    <link rel="stylesheet" href="assets/css/style-v2.css" />
-    <title>Atmosphere</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;800&family=Merriweather:wght@300&display=swap"
+    rel="stylesheet">
 
-  <body>
-    <header class="jumbotron bg">
-      <h1>Atmosphere</h1>
-      <p>Music suited to your weather related mood</p>
-    </header>
-    <!-- added emojis for mood choice as buttons -->
-    <div class="container-fluid">
-      <div class="mood row d-flex justify-content-center" id="mood">
-        <button class="smileBtn" style="font-size:30px">&#128515;</button>
-        <button class="angryBtn" style="font-size:30px">&#128544;</button>
-        <button class="loveBtn" style="font-size:30px">&#128525;</button>
-        <button class="sadBtn" style="font-size:30px">&#128557;</button>
-        <button class="crazyBtn" style="font-size:30px">&#129322;</button>
-        <button class="chillBtn" style="font-size:30px">&#128526;</button>
-      </div>
+  <link rel="stylesheet" href="assets/css/style-v2.css" />
+  <title>Atmosphere</title>
+</head>
+
+<body>
+  <header class="jumbotron bg">
+    <img src="./assets/images/HeaderLogo.svg" alt="logo" class="headerLogo">
+    <!-- <h1>Atmosphere</h1> -->
+    <!-- <p>Music suited to your weather related mood</p> -->
+  </header>
+  <!-- added emojis for mood choice as buttons -->
+  <div class="container-fluid">
+    <div class="mood row d-flex justify-content-center" id="moodButtons">
+      <button class="smileBtn" style="font-size:30px">&#128515;</button>
+      <button class="angryBtn" style="font-size:30px">&#128544;</button>
+      <button class="loveBtn" style="font-size:30px">&#128525;</button>
+      <button class="sadBtn" style="font-size:30px">&#128557;</button>
+      <button class="crazyBtn" style="font-size:30px">&#129322;</button>
+      <button class="chillBtn" style="font-size:30px">&#128526;</button>
     </div>
+  </div>
 
-<!-- added weather area -->
-    <div class=" weather row d-flex justify-content-center">
+  <!-- added weather area -->
+  <div class=" weather row d-flex justify-content-center">
 
-      <div class="card" id="weatherCard">
-        <div class="card-body">
-          <div class="card" id="current-weather-card">
-            <div class="card-body text-center">
-              <h5 class="card-title">Atlanta (03-03-2021)</h5>
-              <p>
-                <img class="small-icon" id="icon-currentweather"
-                  src="https://www.clipartmax.com/png/middle/228-2280519_rain-cloud-icon-partly-cloudy-weather-icon.png">
-              </p>
-              <select class="dropdown" name="city-choice" id="city-choice">
-                <option value="Choose a City">--Choose a City--</option>
-                <option value="Columbus,OH">Columbus,OH</option>
-                <option value="Cincinnati,OH">Cincinnati,OH</option>
-                <option value="Rio de Janeiro,BR">Rio de Janeiro,BR</option>
-                <option value="Quito,EC">Quito,EC</option>
-                <option value="Nairobi,KE">Nairobi,KE</option>
-                <option value="Paris,FR">Paris,FR</option>
-                <option value="Tokyo,JP">Tokyo,JP</option>
-                <option value="Sydney,AU">Sydney,AU</option>
-                <option value="Antarctica">Antarctica</option>
-              </select>
-              <h3 class="card-text"><span id="current-temp">90.9</span> &deg;F</h3>
-              <p class="card-text" id="weather-description">Mix of Sun & Clouds</p>
-              <p class="card-text">Precipitation: <span id="chance-precip">47</span>%</p>
-            </div>
+    <div class="card" id="weatherCard">
+      <div class="card-body">
+        <div class="card" id="current-weather-card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Atlanta (03-03-2021)</h5>
+            <p>
+              <img class="small-icon" id="icon-currentweather"
+                src="https://www.clipartmax.com/png/middle/228-2280519_rain-cloud-icon-partly-cloudy-weather-icon.png">
+            </p>
+            <select class="dropdown" name="city-choice" id="city-choice">
+              <option value="Choose a City">--Choose a City--</option>
+              <option value="4509177">Columbus (US)</option>
+              <option value="4508722">Cincinnati (US)</option>
+              <option value="3451189">Rio de Janeiro (BR)</option>
+              <option value="3652462">Quito (EC)</option>
+              <option value="184742">Nairobi (KE)</option>
+              <option value="2968815">Paris (FR)</option>
+              <option value="1850147">Tokyo (JP)</option>
+              <option value="2147714">Sydney (AU)</option>
+              <option value="6255152">Antarctica</option>
+            </select>
+            <h3 class="card-text"><span id="current-temp">90.9</span> &deg;F</h3>
+            <p class="card-text" id="weather-description">Mix of Sun & Clouds</p>
           </div>
         </div>
       </div>
     </div>
-     <div class="row d-flex justify-content-center">
-        <div class="card" id="Thumbs">
-          <div class="card-body" id="thumbs">
-            <button class="upThumb"><i class="fas fa-thumbs-up"></i></button>
-            <button class="upThumb"><i class="fas fa-thumbs-down"></i></button>
-          </div>
-        </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="card" id="Thumbs">
+      <div class="card-body" id="thumbButtons">
+        <button id="upThumb"><i class="fas fa-thumbs-up"></i></button>
+        <button id="dnThumb"><i class="fas fa-thumbs-down"></i></button>
       </div>
     </div>
-    <!-- added player to page -->
-<!-- <div class="player">
+  </div>
+  </div>
+  <!-- added player to page -->
+  <!-- <div class="player">
   <div class="details">
     <div class="nowPlaying">Now Playing:</div>
     <div class="trackArt"></div>
@@ -92,24 +91,21 @@
     <div class="nexttrack" type="button"><i class="fa fa-step-forward fa-2x"></i></div>
   </div>
 </div> -->
-<!-- added slider for song time -->
-<!-- <div class="sliderContainer">
+  <!-- added slider for song time -->
+  <!-- <div class="sliderContainer">
   <div class="current-time">00:00</div>
   <input type="range" min="1" max="100" value="0"class="seekSlider" onchange="seekTo()">
   <div class="totalDuration">00:00</div>
-</div> --> 
-<div class="row d-flex justify-content-center">
-<iframe width="420" height="315"
-src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
-</div>
+</div> -->
+  <div class="row d-flex justify-content-center">
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+    </iframe>
+  </div>
 
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-      <script src="assets/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="assets/js/script.js"></script>
 
-    </body>
+</body>
 
-  </html>
+</html>
