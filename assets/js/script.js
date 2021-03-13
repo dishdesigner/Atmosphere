@@ -74,6 +74,10 @@ function getMusic(shazamSearch) {
   const weatherSongs = {
     async: true,
     crossDomain: true,
+    // url:
+    //   "https://shazam.p.rapidapi.com/search?term=" +
+    //   currentMood +
+    //   "&locale=en-US&offset=0&limit=10",
     url:
       "https://shazam.p.rapidapi.com/search?term=" + currentWeatherDesc + "&locale=en-US&offset=0&limit=10",
     method: "GET",
