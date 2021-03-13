@@ -40,29 +40,26 @@
   <div class=" weather row d-flex justify-content-center">
 
     <div class="card" id="weatherCard">
-      <div class="card-body">
-        <div class="card" id="current-weather-card">
-          <div class="card-body text-center">
-            <h5 class="card-title">Atlanta (03-03-2021)</h5>
-            <p>
-              <img class="small-icon" id="icon-currentweather"
-                src="https://www.clipartmax.com/png/middle/228-2280519_rain-cloud-icon-partly-cloudy-weather-icon.png">
-            </p>
-            <select class="dropdown" name="city-choice" id="city-choice">
-              <option value="Choose a City">--Choose a City--</option>
-              <option value="4509177">Columbus (US)</option>
-              <option value="4508722">Cincinnati (US)</option>
-              <option value="3451189">Rio de Janeiro (BR)</option>
-              <option value="3652462">Quito (EC)</option>
-              <option value="184742">Nairobi (KE)</option>
-              <option value="2968815">Paris (FR)</option>
-              <option value="1850147">Tokyo (JP)</option>
-              <option value="2147714">Sydney (AU)</option>
-              <option value="6255152">Antarctica</option>
-            </select>
-            <h3 class="card-text"><span id="current-temp">90.9</span> &deg;F</h3>
-            <p class="card-text" id="weather-description">Mix of Sun & Clouds</p>
-          </div>
+      <div class="card" id="current-weather-card">
+        <div class="card-body text-center">
+          <select class="dropdown" name="city-choice" id="city-choice">
+            <option value="4509177" selected>Columbus (US)</option>
+            <option value="4508722">Cincinnati (US)</option>
+            <option value="3451189">Rio de Janeiro (BR)</option>
+            <option value="3652462">Quito (EC)</option>
+            <option value="184742">Nairobi (KE)</option>
+            <option value="2968815">Paris (FR)</option>
+            <option value="1850147">Tokyo (JP)</option>
+            <option value="2147714">Sydney (AU)</option>
+            <option value="6255152">Antarctica</option>
+          </select>
+          <p>
+            <img class="small-icon" id="icon-currentweather"
+              src="https://www.clipartmax.com/png/middle/228-2280519_rain-cloud-icon-partly-cloudy-weather-icon.png">
+          </p>
+          <h3 class="card-title"><span id="currentCity">Columbus</span></h3>
+          <h3 class="card-text"><span id="current-temp">45</span> &deg;F</h3>
+          <p class="card-text" id="weather-description">Mix of Sun & Clouds</p>
         </div>
       </div>
     </div>

@@ -2,10 +2,12 @@
 var currentMood = 'happy'; // test hard-code phrase to be concatenated
 var moods = ["happy", "angry", "love", "sad", "crazy", "chill"];
 var currentCity = ""; // set by user choice in pulldown
+var currentWeather = {}; // JSON object returned from OpenWeather call
 var currentWeatherDesc = 'Clear'; // 1 word, comes from OpenWeather API's "main" key
 var shazamSearch = (currentMood + "%20" + currentWeatherDesc); // concat mood with weather and substitute space with "%20"
 var currentPlaylist = []; // final returned array from function getMusic()
 var currentSong = []; // array of song title & artist, needed for thumbs ratings
+const cityChoice = document.querySelector("#city-choice");
 
 // EVENT LISTENERS
 $(".smileBtn").on("click", function (e) {
@@ -34,27 +36,37 @@ $(".chillBtn").on("click", function (e) {
 });
 
 // CITY PULLDOWN CHANGE LISTENER
-// Code Goes Here - send cityCode to getWeather()
+cityChoice.addEventListener('change', (event) => {
+  getWeather(event.target.value);
+});
 
 
 /////////////// FUNCTION getWeather
 function getWeather(cityCode) {
-  fetch(
-    "https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=%22metric%22%20or%20%22imperial%22&mode=xml%2C%20html",
-    {
-      method: "GET",
-      headers: {
-        "x-rapidapi-key": "7463f1062fmsh1fe8735365773c9p140f00jsne6b9b6acaa80",
-        "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-      },
+
+  var weatherStr = "https://api.openweathermap.org/data/2.5/weather?id=" + cityCode + "&APPID=c766e07983131bea43b14f794d29153e&units=imperial";
+
+  fetch(weatherStr, {
+    "method": "POST",
+    "headers": {
+      "x-rapidapi-key": "cf3632fc2dmshdc43fe3a2b3d41ep1a7ac6jsn90b61c96f824",
+      "x-rapidapi-host": "openweatherapp.p.rapidapi.com"
     }
-  )
-    .then((response) => {
-      console.log(response); // change this output location
-    })
-    .catch((err) => {
-      console.error(err); // change this error handling output
-    });
+  })
+  .then(response => {
+    console.log(response);
+  })
+  .catch(err => {
+    console.error(err);
+  });
+
+
+  // fetch(weatherStr)
+  //   .then((response) => {
+  //     currentWeather = response;
+  //     console.log(currentWeather); // TEST
+  //     currentWeatherDesc = currentWeather.weather.0.main; // use only the one-word description
+  //   })
 }
 
 /////////////// FUNCTION getMusic

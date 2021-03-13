@@ -2,13 +2,13 @@
 :root {
     --sans-font: 'Merriweather Sans', sans-serif;
     --serif-font: 'Merriweather', serif;
-    --color-slate: rgb(121, 161, 207);
+    --color-sky: rgb(121, 161, 207);
     --color-md-blue: rgb(43, 110, 165);
 }
 
 /******************   ELEMENTS   ********************/
 body {
-    background-color: var(--color-slate);
+    background-color: var(--color-sky);
     font-family: var(--sans-font);
     font-size: 1em;
 }
@@ -65,6 +65,12 @@ select {
     margin-bottom: 0px;
 }
 
+.card {
+    /* background: transparent; */
+    background-color: var(--color-md-blue);
+    color: white;
+}
+
 .smileBtn, .angryBtn, .loveBtn, .sadBtn, .crazyBtn, .chillBtn {
     background-color: transparent;
     border: none;
@@ -80,15 +86,28 @@ select {
     font-weight: 800;
 }
 #thumbs, #Thumbs {
-    background-color: var(--color-slate);
+    background-color: var(--color-sky);
+}
+
+#Thumbs {
+    border: none;
 }
 
 #thumbButtons, #moodButtons {
-    background-color: var(--color-md-blue);
     padding: 4px 0;
+}
+
+#thumbButtons {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+#moodButtons {
+    background-color: var(--color-md-blue);
 }
 
 #weatherCard {
     background-color: transparent;
     border: none;
+    margin-top: 1.5em;
 }
