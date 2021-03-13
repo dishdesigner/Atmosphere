@@ -1,8 +1,27 @@
-/* @media screen and (min-width:480px){} */
+/******************   GLOBAL VARIABLES   ********************/
+:root {
+    --sans-font: 'Merriweather Sans', sans-serif;
+    --serif-font: 'Merriweather', serif;
+    --color-sky: rgb(121, 161, 207);
+    --color-md-blue: rgb(43, 110, 165);
+}
 
+/******************   ELEMENTS   ********************/
 body {
-    background-color: rgb(103, 125, 141);
+    background-color: var(--color-sky);
+    font-family: var(--sans-font);
     font-size: 1em;
+}
+
+button {
+    border-radius: 50%;
+    background-color: var(--color-md-blue);
+    color: white;
+}
+
+button > i {
+    font-size: 1.0em;
+    padding: 8px;
 }
 
 li {
@@ -11,6 +30,28 @@ li {
 
 select {
     margin: 0 0 1em 0;
+}
+
+/******************   CLASSES   ********************/
+.headerLogo {
+    width: 70%;
+}
+
+/* @media only screen and (min-width: 600px) {
+    .headerLogo {
+        width: 30%;
+    }
+ */
+
+@media only screen and (min-width: 1000px) {
+    .headerLogo {
+        width: 30%;
+    }
+}
+
+.jumbotron {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .bg {
@@ -24,54 +65,49 @@ select {
     margin-bottom: 0px;
 }
 
-.smileBtn {
+.card {
+    /* background: transparent; */
+    background-color: var(--color-md-blue);
+    color: white;
+}
+
+.smileBtn, .angryBtn, .loveBtn, .sadBtn, .crazyBtn, .chillBtn {
     background-color: transparent;
     border: none;
 }
-
-.angryBtn {
-    background-color: transparent;
-    border: none;
-}
-
-.loveBtn {
-    background-color: transparent;
-    border: none;
-}
-
-.sadBtn {
-    background-color: transparent;
-    border: none;
-}
-
-.crazyBtn {
-    background-color: transparent;
-    border: none;
-}
-
-.chillBtn {
-    background-color: transparent;
-    border: none;
-}
-
-
 
 .small-icon {
     width: 6rem;
 }
 
-
-
+/******************   IDS   ********************/
 #current-temp {
     font-size: 1em;
     font-weight: 800;
 }
-#thumbs {
-    background-color: rgb(103, 125, 141);
+#thumbs, #Thumbs {
+    background-color: var(--color-sky);
 }
+
 #Thumbs {
-    background-color: rgb(103, 125, 141);
-} 
+    border: none;
+}
 
+#thumbButtons, #moodButtons {
+    padding: 4px 0;
+}
 
+#thumbButtons {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
 
+#moodButtons {
+    background-color: var(--color-md-blue);
+}
+
+#weatherCard {
+    background-color: transparent;
+    border: none;
+    margin-top: 1.5em;
+}

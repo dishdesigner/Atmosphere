@@ -1,79 +1,128 @@
 // GLOBAL VARIABLES
-var weather = ""; // change this for weatherfix
-var currentMood = 'angry'; // test hard-code phrase to be concatenated
-var currentWeatherDesc = ''; // 1 word, comes from OpenWeather API's "main" key
-var shazamSearch = 'angry%20shower%20rain%20and%20drizzle'; // concat mood with weather and substitute spaces with "%20"
+var currentMood = 'happy'; // test hard-code phrase to be concatenated
 var moods = ["happy", "angry", "love", "sad", "crazy", "chill"];
+var currentCity = ""; // set by user choice in pulldown
+var currentWeather = {}; // JSON object returned from OpenWeather call
+var currentWeatherDesc = 'Clear'; // 1 word, comes from OpenWeather API's "main" key
+var shazamSearch = (currentMood + "%20" + currentWeatherDesc); // concat mood with weather and substitute space with "%20"
+var currentPlaylist = []; // final returned array from function getMusic()
+var currentSong = []; // array of song title & artist, needed for thumbs ratings
+const cityChoice = document.querySelector("#city-choice");
 
-// BUTTON EVENT LISTENERS
+// EVENT LISTENERS
 $(".smileBtn").on("click", function (e) {
   currentMood = moods[0];
-  getMusic(currentMood);
+  getMusic(shazamSearch);
 });
 $(".angryBtn").on("click", function (e) {
   currentMood = moods[1];
-  getMusic(currentMood);
+  getMusic(shazamSearch);
 });
 $(".loveBtn").on("click", function (e) {
   currentMood = moods[2];
-  getMusic(currentMood);
+  getMusic(shazamSearch);
 });
 $(".sadBtn").on("click", function (e) {
   currentMood = moods[3];
-  getMusic(currentMood);
+  getMusic(shazamSearch);
 });
 $(".crazyBtn").on("click", function (e) {
   currentMood = moods[4];
-  getMusic(currentMood);
+  getMusic(shazamSearch);
 });
 $(".chillBtn").on("click", function (e) {
   currentMood = moods[5];
-  getMusic(currentMood);
+  getMusic(shazamSearch);
 });
 
+// CITY PULLDOWN CHANGE LISTENER
+cityChoice.addEventListener('change', (event) => {
+  getWeather(event.target.value);
+});
+
+
 /////////////// FUNCTION getWeather
-function getWeather() {
-  fetch(
-    "https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=%22metric%22%20or%20%22imperial%22&mode=xml%2C%20html",
-    {
-      method: "GET",
-      headers: {
-        "x-rapidapi-key": "7463f1062fmsh1fe8735365773c9p140f00jsne6b9b6acaa80", // this doesn't shield private API keys! Don't care...
-        "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-      },
+function getWeather(cityCode) {
+
+  var weatherStr = "https://api.openweathermap.org/data/2.5/weather?id=" + cityCode + "&APPID=c766e07983131bea43b14f794d29153e&units=imperial";
+
+  fetch(weatherStr, {
+    "method": "POST",
+    "headers": {
+      "x-rapidapi-key": "cf3632fc2dmshdc43fe3a2b3d41ep1a7ac6jsn90b61c96f824",
+      "x-rapidapi-host": "openweatherapp.p.rapidapi.com"
     }
-  )
-    .then((response) => {
-      console.log(response); // change this output location
-    })
-    .catch((err) => {
-      console.error(err); // change this error handling output
-    });
+  })
+  .then(response => {
+    console.log(response);
+  })
+  .catch(err => {
+    console.error(err);
+  });
+
+
+  // fetch(weatherStr)
+  //   .then((response) => {
+  //     currentWeather = response;
+  //     console.log(currentWeather); // TEST
+  //     currentWeatherDesc = currentWeather.weather.0.main; // use only the one-word description
+  //   })
 }
 
 /////////////// FUNCTION getMusic
-function getMusic(currentMood) {
-  const settings = {
+function getMusic(shazamSearch) {
+  const weatherSongs = {
     async: true,
     crossDomain: true,
-    // url:
-    //   "https://shazam.p.rapidapi.com/search?term=" +
-    //   currentMood +
-    //   "&locale=en-US&offset=0&limit=10",
     url:
-      "https://shazam.p.rapidapi.com/search?term=" + currentMood + "%20" + currentWeatherDesc + "&locale=en-US&offset=0&limit=10",
+      "https://shazam.p.rapidapi.com/search?term=" + currentWeatherDesc + "&locale=en-US&offset=0&limit=10",
     method: "GET",
     headers: {
-      "x-rapidapi-key": "f942341111mshdf06ad5a580995fp1bacd2jsna1305fa9f28f",
+      "x-rapidapi-key": "7463f1062fmsh1fe8735365773c9p140f00jsne6b9b6acaa80",
       "x-rapidapi-host": "shazam.p.rapidapi.com",
     },
   };
-  $.ajax(settings).done(function (response) {
-    console.log(response); // console the JSON object from Shazam
-    // update the DOM html
+  $.ajax(weatherSongs).done(function (response) {
+    console.log(response.tracks.hits.length);
   });
 }
-getMusic(currentMood); // testing: we want a concat string of mood + weather to search with;
+// getMusic(currentMood); // TESTING CALL
+
+
+// function getMusic(searchStr) {
+//   const songs = {
+//     async: true,
+//     crossDomain: true,
+//     url:
+//       "https://shazam.p.rapidapi.com/search?term=" + searchStr + "&locale=en-US&offset=0&limit=10",
+//     method: "GET",
+//     headers: {
+//       "x-rapidapi-key": "7463f1062fmsh1fe8735365773c9p140f00jsne6b9b6acaa80",
+//       "x-rapidapi-host": "shazam.p.rapidapi.com",
+//     },
+//   };
+//   $.ajax(songs).done(function (response) {
+//     return response; // return JSON array of songs
+//   });
+// }
+
+// function buildPlaylist(currentWeatherDesc, currentMood) {
+//   console.log(currentWeatherDesc + " " + currentMood);
+//   console.log(getMusic(currentWeatherDesc));
+
+//   if ( getMusic(currentWeatherDesc).tracks.hits.length === 0 ) {
+//     return getMusic(currentMood);
+//   } else {
+//     return getMusic(shazamSearch);
+//   }
+// }
+
+// buildPlaylist(currentWeatherDesc, currentMood); // testing: we want a concat string of mood + weather to search with;
+
+
+
+
+/************************************************************ */
 // name variables for music player
 // var nowPlaying = $('.nowPlaying');
 // var trackArt = $('.trackArt');
