@@ -1,40 +1,37 @@
-var weather = {
-  rainy: {
-    genres: ["classical"],
-    keywords: ["sad"],
-  },
-  sunny: {
-    genres: ["rock"],
-    keywords: ["happy"],
-  },
-};
-var currentMood = '';
+// GLOBAL VARIABLES
+var weather = ""; // change this for weatherfix
+var currentMood = 'angry'; // test hard-code phrase to be concatenated
+var currentWeatherDesc = ''; // 1 word, comes from OpenWeather API's "main" key
+var shazamSearch = 'angry%20shower%20rain%20and%20drizzle'; // concat mood with weather and substitute spaces with "%20"
 var moods = ["happy", "angry", "love", "sad", "crazy", "chill"];
+
+// BUTTON EVENT LISTENERS
 $(".smileBtn").on("click", function (e) {
   currentMood = moods[0];
-
+  getMusic(currentMood);
 });
 $(".angryBtn").on("click", function (e) {
   currentMood = moods[1];
+  getMusic(currentMood);
 });
 $(".loveBtn").on("click", function (e) {
   currentMood = moods[2];
+  getMusic(currentMood);
 });
 $(".sadBtn").on("click", function (e) {
   currentMood = moods[3];
+  getMusic(currentMood);
 });
 $(".crazyBtn").on("click", function (e) {
   currentMood = moods[4];
+  getMusic(currentMood);
 });
 $(".chillBtn").on("click", function (e) {
   currentMood = moods[5];
+  getMusic(currentMood);
 });
 
-console.log(mood);
-var userInput = mood[""];
-var music = '';
-
-
+/////////////// FUNCTION getWeather
 function getWeather() {
   fetch(
     "https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=%22metric%22%20or%20%22imperial%22&mode=xml%2C%20html",
@@ -54,14 +51,17 @@ function getWeather() {
     });
 }
 
+/////////////// FUNCTION getMusic
 function getMusic(currentMood) {
   const settings = {
     async: true,
     crossDomain: true,
+    // url:
+    //   "https://shazam.p.rapidapi.com/search?term=" +
+    //   currentMood +
+    //   "&locale=en-US&offset=0&limit=10",
     url:
-      "https://shazam.p.rapidapi.com/search?term=" +
-      moods +
-      "&locale=en-US&offset=0&limit=10",
+      "https://shazam.p.rapidapi.com/search?term=" + currentMood + "%20" + currentWeatherDesc + "&locale=en-US&offset=0&limit=10",
     method: "GET",
     headers: {
       "x-rapidapi-key": "f942341111mshdf06ad5a580995fp1bacd2jsna1305fa9f28f",
@@ -69,11 +69,11 @@ function getMusic(currentMood) {
     },
   };
   $.ajax(settings).done(function (response) {
-    console.log(response);
+    console.log(response); // console the JSON object from Shazam
     // update the DOM html
   });
 }
-getMusic(userInput);
+getMusic(currentMood); // testing: we want a concat string of mood + weather to search with;
 // name variables for music player
 // var nowPlaying = $('.nowPlaying');
 // var trackArt = $('.trackArt');
