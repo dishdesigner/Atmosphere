@@ -79,7 +79,7 @@ function getMusic(shazamSearch) {
     //   currentMood +
     //   "&locale=en-US&offset=0&limit=10",
     url:
-      "https://shazam.p.rapidapi.com/search?term=" + currentWeatherDesc + "&locale=en-US&offset=0&limit=10",
+      "https://shazam.p.rapidapi.com/search?term=" + currentMood + "&locale=en-US&offset=0&limit=10",
     method: "GET",
     headers: {
       "x-rapidapi-key": "7463f1062fmsh1fe8735365773c9p140f00jsne6b9b6acaa80",
@@ -87,7 +87,8 @@ function getMusic(shazamSearch) {
     },
   };
   $.ajax(weatherSongs).done(function (response) {
-    console.log(response.tracks.hits.length);
+    console.log(response);
+    window.location.href = response.tracks.hits[0].track.url;
   });
 }
 // getMusic(currentMood); // TESTING CALL
